@@ -11,6 +11,7 @@ import com.example.quizapp.R
 import com.example.quizapp.adapter.CategoryAdapter
 import com.example.quizapp.databinding.FragmentHomeBinding
 import com.example.quizapp.model.CategoryModelClass
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class HomeFragment : Fragment() {
 
@@ -28,7 +29,16 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        binding.coinID.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
+        binding.coinValID.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
         return binding.root
     }
 
