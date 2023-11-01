@@ -10,6 +10,7 @@ import com.example.quizapp.R
 import com.example.quizapp.adapter.HistoryAdapter
 import com.example.quizapp.databinding.FragmentHistoryBinding
 import com.example.quizapp.model.HistoryModelClass
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
 class HistoryFragment : Fragment() {
@@ -27,6 +28,16 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding.coinID.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
+        binding.coinValID.setOnClickListener{
+            val bottomSheetDialog: BottomSheetDialogFragment = WithdrawlFragment()
+            bottomSheetDialog.show(requireActivity().supportFragmentManager,"Test")
+            bottomSheetDialog.enterTransition
+        }
 
         return binding.root
     }
